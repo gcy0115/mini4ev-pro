@@ -3,8 +3,8 @@
 #include <thread>
 #include <atomic>
 #include <mutex>
-#include "include/can_opration.hpp"
-#include "include/dm4310.hpp"
+#include "include/steering-node/can_opration.hpp"
+#include "include/steering-node/dm4310.hpp"
 
 
 auto receiveThread(int sock, dmMotor motor) {
