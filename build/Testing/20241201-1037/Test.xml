@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20241201-1037-Experimental"
+	Name="mini4ev-desktop"
+	Generator="ctest-3.28.3"
+	CompilerName="/usr/bin/aarch64-linux-gnu-g++"
+	CompilerVersion="13.2.0"
+	OSName="Linux"
+	Hostname="mini4ev-desktop"
+	OSRelease="6.8.0-1015-raspi"
+	OSVersion="#17-Ubuntu SMP PREEMPT_DYNAMIC Mon Nov 11 14:12:16 UTC 2024"
+	OSPlatform="aarch64"
+	Is64Bits="1"
+	VendorString=""
+	VendorID="Unknown Manufacturer"
+	FamilyID="8"
+	ModelID="0"
+	ProcessorCacheSize="0"
+	NumberOfLogicalCPU="4"
+	NumberOfPhysicalCPU="1"
+	TotalVirtualMemory="1023"
+	TotalPhysicalMemory="7933"
+	LogicalProcessorsPerPhysical="4"
+	ProcessorClockFrequency="0"
+	>
+	<Testing>
+		<StartDateTime>Dec 01 18:37 CST</StartDateTime>
+		<StartTestTime>1733049432</StartTestTime>
+		<TestList/>
+		<EndDateTime>Dec 01 18:37 CST</EndDateTime>
+		<EndTestTime>1733049432</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

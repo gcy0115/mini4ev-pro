@@ -1,0 +1,4 @@
+source;share/steering-node/local_setup.bash
+source;share/steering-node/local_setup.dsv
+source;share/steering-node/local_setup.sh
+source;share/steering-node/local_setup.zsh
