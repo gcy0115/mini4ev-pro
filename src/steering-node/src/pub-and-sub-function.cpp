@@ -136,16 +136,18 @@ class MinimalSubscriber : public rclcpp::Node
     }
     /*
     功能
-参数：
-const std_msgs::msg::String & msg：引用类型参数，表示接收到的 ROS 2 消息。
-消息内容存储在 msg.data 中，是一个 std::string。
-打印消息：
-使用 ROS 2 的日志系统 RCLCPP_INFO 将接收到的消息内容打印到终端。
-this->get_logger()：返回该节点的日志记录器。
-msg.data.c_str()：将 std::string 转换为 C 风格字符串，方便格式化输出。
+    参数：
+      const std_msgs::msg::String & msg：引用类型参数，表示接收到的 ROS 2 消息。
+      消息内容存储在 msg.data 中，是一个 std::string。
+    
+    打印消息
+      使用 ROS 2 的日志系统 RCLCPP_INFO 将接收到的消息内容打印到终端。
+      this->get_logger()：返回该节点的日志记录器。
+      msg.data.c_str()：将 std::string 转换为 C 风格字符串，方便格式化输出。
     */
 
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_;
+    // rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_：指向订阅的智能指针，用于接收消息。
 };
 
 int main(int argc, char * argv[])
