@@ -150,19 +150,99 @@ class MinimalSubscriber : public rclcpp::Node
     // rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscription_：指向订阅的智能指针，用于接收消息。
 };
 
-int main(int argc, char * argv[])
-{
-  rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<MinimalSubscriber>());
-  rclcpp::shutdown();
-  return 0;
-}
+// int main(int argc, char * argv[])
+// {
+//   rclcpp::init(argc, argv);
+//   rclcpp::spin(std::make_shared<MinimalSubscriber>());
+//   rclcpp::spin(std::make_shared<MinimalPublisher>());
+//   rclcpp::shutdown();
+//   return 0;
+// }
+
+/*
+您的代码中包含了一个发布者（MinimalPublisher）和一个订阅者（MinimalSubscriber）类，旨在实现同一程序中同时运行发布者和订阅者。整体思路是对的，但存在一个问题：rclcpp::spin 在 ROS 2 中是一个阻塞函数，它会阻塞直到节点停止。因此，代码中的以下部分会导致问题：
+
+rclcpp::spin(std::make_shared<MinimalSubscriber>());
+rclcpp::spin(std::make_shared<MinimalPublisher>());
+
+rclcpp::spin 会阻塞直到 MinimalSubscriber 节点退出。这样，MinimalPublisher 的 spin 调用实际上永远不会执行，因为第一个 spin 调用已经阻塞了执行。因此，您需要使用多线程或其他方式来让发布者和订阅者同时运行。
+
+解决方法
+可以使用 rclcpp::executors::MultiThreadedExecutor 来使两个节点并行运行。MultiThreadedExecutor 会在多个线程中同时执行多个节点，这样发布者和订阅者可以在不同的线程中并行工作。
+*/
 
 
 int main(int argc, char * argv[])
 {
   rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<MinimalPublisher>());
+
+  // 使用多线程执行器同时运行发布者和订阅者
+  rclcpp::executors::MultiThreadedExecutor executor;
+  
+  // 创建节点实例
+  auto publisher_node = std::make_shared<MinimalPublisher>();
+  auto subscriber_node = std::make_shared<MinimalSubscriber>();
+
+  // 将节点添加到执行器中
+  executor.add_node(publisher_node);
+  executor.add_node(subscriber_node);
+
+  // 启动执行器
+  executor.spin();
+
   rclcpp::shutdown();
   return 0;
 }
+
+/*
+使用 std::thread 实现多线程
+在这种情况下，您可以分别在两个线程中调用 rclcpp::spin，一个线程处理发布者，另一个线程处理订阅者。下面是使用 std::thread 进行多线程的修改版本：
+
+int main(int argc, char * argv[])
+{
+  rclcpp::init(argc, argv);
+
+  // 创建节点实例
+  auto publisher_node = std::make_shared<MinimalPublisher>();
+  auto subscriber_node = std::make_shared<MinimalSubscriber>();
+
+  // 创建两个线程：一个用于发布者，另一个用于订阅者
+  std::thread publisher_thread([publisher_node]() {
+    rclcpp::spin(publisher_node);  // 发布者节点的spin
+  });
+
+  std::thread subscriber_thread([subscriber_node]() {
+    rclcpp::spin(subscriber_node);  // 订阅者节点的spin
+  });
+
+  // 等待两个线程完成
+  publisher_thread.join();
+  subscriber_thread.join();
+
+  rclcpp::shutdown();
+  return 0;
+}
+
+主要修改点：
+引入 std::thread：
+
+在 main 函数中，创建两个线程：一个用于处理发布者节点，另一个用于处理订阅者节点。
+分别调用 rclcpp::spin：
+
+每个线程内分别调用 rclcpp::spin 来处理各自的 ROS 2 节点。
+等待线程完成：
+
+使用 join 来确保主线程等待两个子线程完成。这样，主线程在 ROS 2 节点关闭后才会退出。
+
+优点：
+手动控制线程：
+您可以精确控制线程的行为（如启动、同步等）。
+灵活性：
+可以根据需要调整线程的数量和任务。对于复杂的应用，使用 std::thread 提供了更高的灵活性。
+
+缺点：
+复杂性：
+手动管理线程需要小心处理线程同步、资源共享等问题。如果多个线程共享同一资源（如日志、变量等），需要考虑线程安全问题。
+与 ROS 2 的 executor 比较：
+使用 std::thread 是一种手动的多线程管理方式，可能会比 rclcpp::executors::MultiThreadedExecutor 更加复杂。MultiThreadedExecutor 会自动管理线程，适用于大多数用例。
+*/
