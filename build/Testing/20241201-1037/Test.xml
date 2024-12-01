@@ -3,7 +3,7 @@
 	BuildStamp="20241201-1037-Experimental"
 	Name="mini4ev-desktop"
 	Generator="ctest-3.28.3"
-	CompilerName="/usr/bin/aarch64-linux-gnu-g++"
+	CompilerName="/usr/bin/c++"
 	CompilerVersion="13.2.0"
 	OSName="Linux"
 	Hostname="mini4ev-desktop"
@@ -24,11 +24,11 @@
 	ProcessorClockFrequency="0"
 	>
 	<Testing>
-		<StartDateTime>Dec 01 18:37 CST</StartDateTime>
-		<StartTestTime>1733049432</StartTestTime>
+		<StartDateTime>Dec 01 22:07 CST</StartDateTime>
+		<StartTestTime>1733062041</StartTestTime>
 		<TestList/>
-		<EndDateTime>Dec 01 18:37 CST</EndDateTime>
-		<EndTestTime>1733049432</EndTestTime>
+		<EndDateTime>Dec 01 22:07 CST</EndDateTime>
+		<EndTestTime>1733062041</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>
