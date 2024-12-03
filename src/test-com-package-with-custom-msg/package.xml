@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>test-com-package</name>
+  <name>test-com-package-with-custom-msg</name>
   <version>0.0.0</version>
-  <description>Examples of minimal publisher and subscriber using rclcpp</description>
+  <description>Examples of minimal publisher and subscriber with custom message</description>
   <maintainer email="gcy15256266892@163.com">mini4ev</maintainer>
   <license>Apache-2.0</license>
 
@@ -12,8 +12,10 @@
 
   <depend>rclcpp</depend>
   <depend>std_msgs</depend>
+  <depend>custom_interfaces</depend>
   <!-- #include "rclcpp/rclcpp.hpp" -->
   <!-- #include "std_msgs/msg/string.hpp" -->
+  <!-- #include "custom_interfaces/msg/angle.hpp" -->
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

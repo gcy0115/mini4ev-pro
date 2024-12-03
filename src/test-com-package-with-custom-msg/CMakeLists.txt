@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(test-com-package)
+project(test-com-package-with-custom-msg)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -10,25 +10,28 @@ find_package(ament_cmake REQUIRED)
 
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(custom_interfaces REQUIRED)
 # <depend>rclcpp</depend>
 # <depend>std_msgs</depend>
+# <depend>custom_interfaces</depend>
 
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-add_executable(dual-nodes src/dual-nodes.cpp)
+# add_executable(dual-nodes src/dual-nodes.cpp)
 # 节点可执行文件和节点代码
-add_executable(talker-listener src/pub-sub-function.cpp)
-ament_target_dependencies(talker-listener rclcpp std_msgs)
+add_executable(talker-listener src/pub-sub-function-with-msg.cpp)
+ament_target_dependencies(talker-listener rclcpp std_msgs custom_interfaces)
 
-target_include_directories(dual-nodes PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include/${PROJECT_NAME}>)
-target_compile_features(dual-nodes PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+# target_include_directories(dual-nodes PUBLIC
+#   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+#   $<INSTALL_INTERFACE:include/${PROJECT_NAME}>)
+
+# target_compile_features(dual-nodes PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
 install(TARGETS 
-  dual-nodes
+  # dual-nodes
   talker-listener
   DESTINATION lib/${PROJECT_NAME})
 
