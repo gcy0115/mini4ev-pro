@@ -1,22 +1,4 @@
 {
-    "MicroPython.executeButton": [
-        {
-            "text": "▶",
-            "tooltip": "运行",
-            "alignment": "left",
-            "command": "extension.executeFile",
-            "priority": 3.5
-        }
-    ],
-    "MicroPython.syncButton": [
-        {
-            "text": "$(sync)",
-            "tooltip": "同步",
-            "alignment": "left",
-            "command": "extension.execute",
-            "priority": 4
-        }
-    ],
     "cmake.sourceDirectory": "/home/mini4ev/mini4ev-pro/src/steering-node",
     "files.associations": {
         "*.cps": "javascript",
@@ -97,6 +79,18 @@
         "shared_mutex": "cpp",
         "span": "cpp",
         "stdfloat": "cpp",
-        "variant": "cpp"
-    }
+        "variant": "cpp",
+        "*.msg": "ros-msg",
+        "*.srv": "ros-srv",
+        "*.action": "ros-action"
+    },
+    "cmake.ignoreCMakeListsMissing": true,
+    "cmake.configureOnOpen": true,
+    "cmake.generator": "Ninja",
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.installPrefix": "${workspaceFolder}/install",
+    "cmake.buildArgs": [
+          "--symlink-install"
+        ],
+      
 }
