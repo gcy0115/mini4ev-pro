@@ -1,1 +1,0 @@
-/home/mini4ev/mini4ev-pro/build/test-com-package/ament_cmake_core/test-com-packageConfig.cmake
