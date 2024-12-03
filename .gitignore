@@ -1,2 +1,4 @@
 # 忽略build文件
 build/
+log/
+install/
