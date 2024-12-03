@@ -17,20 +17,20 @@ class MinimalPublisher : public rclcpp::Node
 
 核心任务：
 定时器每隔 500 毫秒触发一次。
-每次触发时，在话题 topic 上发布一条字符串消息。*/
+每次触发时，在话题 message 上发布一条字符串消息。*/
 
 /*
 运行流程
 ROS 2 节点启动时，MinimalPublisher 类被实例化。
 构造函数中：
-初始化发布者，监听话题 topic。
+初始化发布者，监听话题 message。
 设置定时器，每隔 500 毫秒调用一次 timer_callback。
 每次 timer_callback 执行时：
 创建消息对象。
 生成消息内容。
 打印日志。
-将消息发布到话题 topic。
-ROS 2 网络中，任何订阅了 topic 的节点都会接收到这些消息。
+将消息发布到话题 message。
+ROS 2 网络中，任何订阅了 message 的节点都会接收到这些消息。
 */
 
 {
@@ -41,9 +41,9 @@ ROS 2 网络中，任何订阅了 topic 的节点都会接收到这些消息。
     调用父类构造函数，初始化节点，指定名称为 "minimal_publisher"。
     初始化 count_ 为 0，用于消息计数。*/
     {
-      publisher_ = this->create_publisher<std_msgs::msg::String>("topic", 10);
+      publisher_ = this->create_publisher<std_msgs::msg::String>("message", 10);
       /*
-      创建一个发布者，负责向话题 topic 发布 std_msgs::msg::String 类型的消息。
+      创建一个发布者，负责向话题 message 发布 std_msgs::msg::String 类型的消息。
       第二个参数 10 是发布队列的深度，表示最多可以缓冲 10 条未发送的消息。*/
 
       /*
@@ -79,7 +79,7 @@ ROS 2 网络中，任何订阅了 topic 的节点都会接收到这些消息。
       使用 ROS 日志系统打印发布的消息内容。
       this->get_logger() 返回该节点的日志记录器*/
       publisher_->publish(message);
-      // 将创建的消息发布到话题 topic。
+      // 将创建的消息发布到话题 message。
     }
     rclcpp::TimerBase::SharedPtr timer_;
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_;
@@ -99,8 +99,8 @@ class MinimalSubscriber : public rclcpp::Node
   通过继承，它获得了 ROS 2 节点的基本功能，比如创建订阅者和发布者、访问日志系统等。
 
 核心任务：
-订阅话题 topic。
-  当接收到类型为 std_msgs::msg::String 的消息时，调用回调函数 topic_callback 处理并打印消息内容。
+订阅话题 message。
+  当接收到类型为 std_msgs::msg::String 的消息时，调用回调函数 message_callback 处理并打印消息内容。
 */
 {
   public:
@@ -112,10 +112,10 @@ class MinimalSubscriber : public rclcpp::Node
     */
     {
       subscription_ = this->create_subscription<std_msgs::msg::String>(
-      "topic", 10, std::bind(&MinimalSubscriber::topic_callback, this, _1));
+      "message", 10, std::bind(&MinimalSubscriber::topic_callback, this, _1));
     /*
     功能：
-    1. 创建一个订阅者，订阅 ROS 2 话题 topic。
+    1. 创建一个订阅者，订阅 ROS 2 话题 message。
     2. 订阅的消息类型是 std_msgs::msg::String。
     3. 消息队列大小为 10，表示最多可以缓存 10 条未处理的消息。
     4. 当有新消息到达时，会调用 topic_callback 函数处理消息。

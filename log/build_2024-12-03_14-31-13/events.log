@@ -1,0 +1,211 @@
+[0.000000] (-) TimerEvent: {}
+[0.000304] (-) JobUnselected: {'identifier': 'steering-node'}
+[0.000511] (test-com-package) JobQueued: {'identifier': 'test-com-package', 'dependencies': OrderedDict()}
+[0.000807] (test-com-package) JobStarted: {'identifier': 'test-com-package'}
+[0.011269] (test-com-package) JobProgress: {'identifier': 'test-com-package', 'progress': 'cmake'}
+[0.012043] (test-com-package) JobProgress: {'identifier': 'test-com-package', 'progress': 'build'}
+[0.012827] (test-com-package) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/mini4ev/mini4ev-pro/build/test-com-package', '--', '-j4', '-l4'], 'cwd': '/home/mini4ev/mini4ev-pro/build/test-com-package', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'mini4ev', 'SSH_CLIENT': '10.16.21.83 3096 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'BROWSER': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/bin/helpers/browser.sh', 'HOME': '/home/mini4ev', 'OLDPWD': '/home/mini4ev', 'TERM_PROGRAM_VERSION': '1.95.3', 'VSCODE_IPC_HOOK_CLI': '/run/user/1002/vscode-ipc-c5c16fae-f2d0-411a-a3d4-99b363f02e18.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/node', 'SSL_CERT_FILE': '/usr/lib/ssl/cert.pem', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/mini4ev/mini4ev-pro/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'mini4ev', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '830', 'PATH': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/bin/remote-cli:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'SSL_CERT_DIR': '/usr/lib/ssl/certs', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1002/vscode-git-0c66257890.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/mini4ev/mini4ev-pro/install/test-com-package:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/mini4ev/mini4ev-pro/build/test-com-package', 'SSH_CONNECTION': '10.16.21.83 3096 10.16.81.29 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/mini4ev/mini4ev-pro/install/test-com-package:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.056564] (test-com-package) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.099723] (-) TimerEvent: {}
+[0.200154] (-) TimerEvent: {}
+[0.300681] (-) TimerEvent: {}
+[0.401175] (-) TimerEvent: {}
+[0.417839] (test-com-package) StdoutLine: {'line': b'-- Found rclcpp: 28.1.5 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.467057] (test-com-package) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.485322] (test-com-package) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.501290] (-) TimerEvent: {}
+[0.507148] (test-com-package) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.531165] (test-com-package) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.601421] (-) TimerEvent: {}
+[0.634777] (test-com-package) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.638375] (test-com-package) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.701539] (-) TimerEvent: {}
+[0.764989] (test-com-package) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[0.791932] (test-com-package) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[0.801632] (-) TimerEvent: {}
+[0.826634] (test-com-package) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.901755] (-) TimerEvent: {}
+[0.919872] (test-com-package) StdoutLine: {'line': b'-- Found std_msgs: 5.3.5 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[0.938308] (test-com-package) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.1 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[1.001884] (-) TimerEvent: {}
+[1.098121] (test-com-package) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.098467] (test-com-package) StdoutLine: {'line': b'-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/mini4ev/mini4ev-pro/src/test-com-package/include>\n'}
+[1.098585] (test-com-package) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.099203] (test-com-package) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.100461] (test-com-package) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.100643] (test-com-package) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.100984] (test-com-package) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.101933] (-) TimerEvent: {}
+[1.102343] (test-com-package) StdoutLine: {'line': b'-- Configuring done (1.1s)\n'}
+[1.128440] (test-com-package) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[1.140767] (test-com-package) StdoutLine: {'line': b'-- Build files have been written to: /home/mini4ev/mini4ev-pro/build/test-com-package\n'}
+[1.202079] (-) TimerEvent: {}
+[1.209734] (test-com-package) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/talker-listener.dir/src/pub-sub-function.cpp.o\x1b[0m\n'}
+[1.210178] (test-com-package) StdoutLine: {'line': b'[ 75%] Built target dual-nodes\n'}
+[1.302203] (-) TimerEvent: {}
+[1.402805] (-) TimerEvent: {}
+[1.503538] (-) TimerEvent: {}
+[1.603982] (-) TimerEvent: {}
+[1.704331] (-) TimerEvent: {}
+[1.804766] (-) TimerEvent: {}
+[1.905153] (-) TimerEvent: {}
+[2.005577] (-) TimerEvent: {}
+[2.105950] (-) TimerEvent: {}
+[2.206316] (-) TimerEvent: {}
+[2.306709] (-) TimerEvent: {}
+[2.407086] (-) TimerEvent: {}
+[2.507484] (-) TimerEvent: {}
+[2.607867] (-) TimerEvent: {}
+[2.708271] (-) TimerEvent: {}
+[2.808642] (-) TimerEvent: {}
+[2.909023] (-) TimerEvent: {}
+[3.009430] (-) TimerEvent: {}
+[3.109812] (-) TimerEvent: {}
+[3.210191] (-) TimerEvent: {}
+[3.310603] (-) TimerEvent: {}
+[3.410981] (-) TimerEvent: {}
+[3.511350] (-) TimerEvent: {}
+[3.611718] (-) TimerEvent: {}
+[3.712105] (-) TimerEvent: {}
+[3.812503] (-) TimerEvent: {}
+[3.912903] (-) TimerEvent: {}
+[4.013296] (-) TimerEvent: {}
+[4.113666] (-) TimerEvent: {}
+[4.214043] (-) TimerEvent: {}
+[4.314422] (-) TimerEvent: {}
+[4.414796] (-) TimerEvent: {}
+[4.515220] (-) TimerEvent: {}
+[4.615657] (-) TimerEvent: {}
+[4.716028] (-) TimerEvent: {}
+[4.816428] (-) TimerEvent: {}
+[4.916828] (-) TimerEvent: {}
+[5.017311] (-) TimerEvent: {}
+[5.117698] (-) TimerEvent: {}
+[5.218111] (-) TimerEvent: {}
+[5.318518] (-) TimerEvent: {}
+[5.418913] (-) TimerEvent: {}
+[5.519308] (-) TimerEvent: {}
+[5.619684] (-) TimerEvent: {}
+[5.720068] (-) TimerEvent: {}
+[5.820472] (-) TimerEvent: {}
+[5.920872] (-) TimerEvent: {}
+[6.021282] (-) TimerEvent: {}
+[6.121707] (-) TimerEvent: {}
+[6.222083] (-) TimerEvent: {}
+[6.322482] (-) TimerEvent: {}
+[6.422853] (-) TimerEvent: {}
+[6.523261] (-) TimerEvent: {}
+[6.623660] (-) TimerEvent: {}
+[6.724055] (-) TimerEvent: {}
+[6.824596] (-) TimerEvent: {}
+[6.924988] (-) TimerEvent: {}
+[7.025399] (-) TimerEvent: {}
+[7.125769] (-) TimerEvent: {}
+[7.226141] (-) TimerEvent: {}
+[7.326526] (-) TimerEvent: {}
+[7.426895] (-) TimerEvent: {}
+[7.527285] (-) TimerEvent: {}
+[7.627656] (-) TimerEvent: {}
+[7.728040] (-) TimerEvent: {}
+[7.828464] (-) TimerEvent: {}
+[7.928842] (-) TimerEvent: {}
+[8.029221] (-) TimerEvent: {}
+[8.129617] (-) TimerEvent: {}
+[8.229995] (-) TimerEvent: {}
+[8.330348] (-) TimerEvent: {}
+[8.430735] (-) TimerEvent: {}
+[8.531172] (-) TimerEvent: {}
+[8.631595] (-) TimerEvent: {}
+[8.732006] (-) TimerEvent: {}
+[8.832447] (-) TimerEvent: {}
+[8.932847] (-) TimerEvent: {}
+[9.033283] (-) TimerEvent: {}
+[9.133673] (-) TimerEvent: {}
+[9.234057] (-) TimerEvent: {}
+[9.334462] (-) TimerEvent: {}
+[9.434858] (-) TimerEvent: {}
+[9.535273] (-) TimerEvent: {}
+[9.635742] (-) TimerEvent: {}
+[9.736154] (-) TimerEvent: {}
+[9.836535] (-) TimerEvent: {}
+[9.936914] (-) TimerEvent: {}
+[10.037300] (-) TimerEvent: {}
+[10.137674] (-) TimerEvent: {}
+[10.238051] (-) TimerEvent: {}
+[10.338441] (-) TimerEvent: {}
+[10.438818] (-) TimerEvent: {}
+[10.539198] (-) TimerEvent: {}
+[10.639592] (-) TimerEvent: {}
+[10.739976] (-) TimerEvent: {}
+[10.840358] (-) TimerEvent: {}
+[10.940748] (-) TimerEvent: {}
+[11.041117] (-) TimerEvent: {}
+[11.141496] (-) TimerEvent: {}
+[11.241869] (-) TimerEvent: {}
+[11.342260] (-) TimerEvent: {}
+[11.442666] (-) TimerEvent: {}
+[11.543093] (-) TimerEvent: {}
+[11.644139] (-) TimerEvent: {}
+[11.744539] (-) TimerEvent: {}
+[11.844904] (-) TimerEvent: {}
+[11.945303] (-) TimerEvent: {}
+[12.045670] (-) TimerEvent: {}
+[12.146041] (-) TimerEvent: {}
+[12.246426] (-) TimerEvent: {}
+[12.346800] (-) TimerEvent: {}
+[12.447184] (-) TimerEvent: {}
+[12.547564] (-) TimerEvent: {}
+[12.647935] (-) TimerEvent: {}
+[12.748337] (-) TimerEvent: {}
+[12.848750] (-) TimerEvent: {}
+[12.949124] (-) TimerEvent: {}
+[13.049517] (-) TimerEvent: {}
+[13.149878] (-) TimerEvent: {}
+[13.250272] (-) TimerEvent: {}
+[13.350680] (-) TimerEvent: {}
+[13.451102] (-) TimerEvent: {}
+[13.551536] (-) TimerEvent: {}
+[13.652028] (-) TimerEvent: {}
+[13.752658] (-) TimerEvent: {}
+[13.853276] (-) TimerEvent: {}
+[13.953727] (-) TimerEvent: {}
+[14.054183] (-) TimerEvent: {}
+[14.154694] (-) TimerEvent: {}
+[14.255576] (-) TimerEvent: {}
+[14.356247] (-) TimerEvent: {}
+[14.456661] (-) TimerEvent: {}
+[14.472932] (test-com-package) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable talker-listener\x1b[0m\n'}
+[14.556776] (-) TimerEvent: {}
+[14.657495] (-) TimerEvent: {}
+[14.758758] (-) TimerEvent: {}
+[14.859782] (-) TimerEvent: {}
+[14.960691] (-) TimerEvent: {}
+[15.061224] (-) TimerEvent: {}
+[15.161671] (-) TimerEvent: {}
+[15.262026] (-) TimerEvent: {}
+[15.263383] (test-com-package) StdoutLine: {'line': b'[100%] Built target talker-listener\n'}
+[15.284669] (test-com-package) CommandEnded: {'returncode': 0}
+[15.285510] (test-com-package) JobProgress: {'identifier': 'test-com-package', 'progress': 'install'}
+[15.303915] (test-com-package) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/mini4ev/mini4ev-pro/build/test-com-package'], 'cwd': '/home/mini4ev/mini4ev-pro/build/test-com-package', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'mini4ev', 'SSH_CLIENT': '10.16.21.83 3096 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'BROWSER': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/bin/helpers/browser.sh', 'HOME': '/home/mini4ev', 'OLDPWD': '/home/mini4ev', 'TERM_PROGRAM_VERSION': '1.95.3', 'VSCODE_IPC_HOOK_CLI': '/run/user/1002/vscode-ipc-c5c16fae-f2d0-411a-a3d4-99b363f02e18.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/node', 'SSL_CERT_FILE': '/usr/lib/ssl/cert.pem', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/mini4ev/mini4ev-pro/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'mini4ev', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '830', 'PATH': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/bin/remote-cli:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'SSL_CERT_DIR': '/usr/lib/ssl/certs', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1002/vscode-git-0c66257890.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/mini4ev/mini4ev-pro/install/test-com-package:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/mini4ev/mini4ev-pro/build/test-com-package', 'SSH_CONNECTION': '10.16.21.83 3096 10.16.81.29 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/mini4ev/mini4ev-pro/install/test-com-package:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[15.318669] (test-com-package) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[15.319481] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/lib/test-com-package/dual-nodes\n'}
+[15.319649] (test-com-package) StdoutLine: {'line': b'-- Installing: /home/mini4ev/mini4ev-pro/install/test-com-package/lib/test-com-package/talker-listener\n'}
+[15.328999] (test-com-package) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/mini4ev/mini4ev-pro/install/test-com-package/lib/test-com-package/talker-listener" to ""\n'}
+[15.329387] (test-com-package) StdoutLine: {'line': b'-- Installing: /home/mini4ev/mini4ev-pro/install/test-com-package/share/ament_index/resource_index/package_run_dependencies/test-com-package\n'}
+[15.329744] (test-com-package) StdoutLine: {'line': b'-- Installing: /home/mini4ev/mini4ev-pro/install/test-com-package/share/ament_index/resource_index/parent_prefix_path/test-com-package\n'}
+[15.330181] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/environment/ament_prefix_path.sh\n'}
+[15.330437] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/environment/ament_prefix_path.dsv\n'}
+[15.330627] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/environment/path.sh\n'}
+[15.330796] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/environment/path.dsv\n'}
+[15.330920] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/local_setup.bash\n'}
+[15.331045] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/local_setup.sh\n'}
+[15.331176] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/local_setup.zsh\n'}
+[15.331321] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/local_setup.dsv\n'}
+[15.331436] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/package.dsv\n'}
+[15.331525] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/ament_index/resource_index/packages/test-com-package\n'}
+[15.331618] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/cmake/test-com-packageConfig.cmake\n'}
+[15.331710] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/cmake/test-com-packageConfig-version.cmake\n'}
+[15.331800] (test-com-package) StdoutLine: {'line': b'-- Installing: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/package.xml\n'}
+[15.334057] (test-com-package) CommandEnded: {'returncode': 0}
+[15.355485] (test-com-package) JobEnded: {'identifier': 'test-com-package', 'rc': 0}
+[15.356492] (-) EventReactorShutdown: {}

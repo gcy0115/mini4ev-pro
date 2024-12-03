@@ -1,0 +1,27 @@
+[0.015s] Invoking command in '/home/mini4ev/mini4ev-pro/build/test-com-package': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mini4ev/mini4ev-pro/build/test-com-package -- -j4 -l4
+[0.123s] [ 50%] Built target dual-nodes
+[0.138s] [ 75%] [32mBuilding CXX object CMakeFiles/talker-listener.dir/src/pub-sub-function.cpp.o[0m
+[13.283s] [100%] [32m[1mLinking CXX executable talker-listener[0m
+[14.024s] [100%] Built target talker-listener
+[14.046s] Invoked command in '/home/mini4ev/mini4ev-pro/build/test-com-package' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/mini4ev/mini4ev-pro/build/test-com-package -- -j4 -l4
+[14.065s] Invoking command in '/home/mini4ev/mini4ev-pro/build/test-com-package': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mini4ev/mini4ev-pro/build/test-com-package
+[14.079s] -- Install configuration: ""
+[14.080s] -- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/lib/test-com-package/dual-nodes
+[14.080s] -- Installing: /home/mini4ev/mini4ev-pro/install/test-com-package/lib/test-com-package/talker-listener
+[14.090s] -- Set non-toolchain portion of runtime path of "/home/mini4ev/mini4ev-pro/install/test-com-package/lib/test-com-package/talker-listener" to ""
+[14.090s] -- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/ament_index/resource_index/package_run_dependencies/test-com-package
+[14.090s] -- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/ament_index/resource_index/parent_prefix_path/test-com-package
+[14.090s] -- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/environment/ament_prefix_path.sh
+[14.091s] -- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/environment/ament_prefix_path.dsv
+[14.091s] -- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/environment/path.sh
+[14.091s] -- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/environment/path.dsv
+[14.091s] -- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/local_setup.bash
+[14.091s] -- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/local_setup.sh
+[14.091s] -- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/local_setup.zsh
+[14.091s] -- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/local_setup.dsv
+[14.094s] -- Installing: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/package.dsv
+[14.094s] -- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/ament_index/resource_index/packages/test-com-package
+[14.094s] -- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/cmake/test-com-packageConfig.cmake
+[14.094s] -- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/cmake/test-com-packageConfig-version.cmake
+[14.094s] -- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/package.xml
+[14.095s] Invoked command in '/home/mini4ev/mini4ev-pro/build/test-com-package' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/mini4ev/mini4ev-pro/build/test-com-package

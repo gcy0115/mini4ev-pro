@@ -1,0 +1,23 @@
+[ 50%] Built target dual-nodes
+[ 75%] [32mBuilding CXX object CMakeFiles/talker-listener.dir/src/pub-sub-function.cpp.o[0m
+[100%] [32m[1mLinking CXX executable talker-listener[0m
+[100%] Built target talker-listener
+-- Install configuration: ""
+-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/lib/test-com-package/dual-nodes
+-- Installing: /home/mini4ev/mini4ev-pro/install/test-com-package/lib/test-com-package/talker-listener
+-- Set non-toolchain portion of runtime path of "/home/mini4ev/mini4ev-pro/install/test-com-package/lib/test-com-package/talker-listener" to ""
+-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/ament_index/resource_index/package_run_dependencies/test-com-package
+-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/ament_index/resource_index/parent_prefix_path/test-com-package
+-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/environment/ament_prefix_path.sh
+-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/environment/path.sh
+-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/environment/path.dsv
+-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/local_setup.bash
+-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/local_setup.sh
+-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/local_setup.zsh
+-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/local_setup.dsv
+-- Installing: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/package.dsv
+-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/ament_index/resource_index/packages/test-com-package
+-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/cmake/test-com-packageConfig.cmake
+-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/cmake/test-com-packageConfig-version.cmake
+-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/package.xml

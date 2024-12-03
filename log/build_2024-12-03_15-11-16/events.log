@@ -1,0 +1,176 @@
+[0.000000] (-) TimerEvent: {}
+[0.000295] (-) JobUnselected: {'identifier': 'steering-node'}
+[0.000497] (test-com-package) JobQueued: {'identifier': 'test-com-package', 'dependencies': OrderedDict()}
+[0.000792] (test-com-package) JobStarted: {'identifier': 'test-com-package'}
+[0.011365] (test-com-package) JobProgress: {'identifier': 'test-com-package', 'progress': 'cmake'}
+[0.012595] (test-com-package) JobProgress: {'identifier': 'test-com-package', 'progress': 'build'}
+[0.013472] (test-com-package) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/mini4ev/mini4ev-pro/build/test-com-package', '--', '-j4', '-l4'], 'cwd': '/home/mini4ev/mini4ev-pro/build/test-com-package', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'mini4ev', 'SSH_CLIENT': '10.16.21.83 3096 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'BROWSER': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/bin/helpers/browser.sh', 'HOME': '/home/mini4ev', 'OLDPWD': '/home/mini4ev', 'TERM_PROGRAM_VERSION': '1.95.3', 'VSCODE_IPC_HOOK_CLI': '/run/user/1002/vscode-ipc-c5c16fae-f2d0-411a-a3d4-99b363f02e18.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/node', 'SSL_CERT_FILE': '/usr/lib/ssl/cert.pem', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/mini4ev/mini4ev-pro/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'mini4ev', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '830', 'PATH': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/bin/remote-cli:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'SSL_CERT_DIR': '/usr/lib/ssl/certs', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1002/vscode-git-0c66257890.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/mini4ev/mini4ev-pro/install/test-com-package:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/mini4ev/mini4ev-pro/build/test-com-package', 'SSH_CONNECTION': '10.16.21.83 3096 10.16.81.29 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/mini4ev/mini4ev-pro/install/test-com-package:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099881] (-) TimerEvent: {}
+[0.123636] (test-com-package) StdoutLine: {'line': b'[ 50%] Built target dual-nodes\n'}
+[0.138508] (test-com-package) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/talker-listener.dir/src/pub-sub-function.cpp.o\x1b[0m\n'}
+[0.199986] (-) TimerEvent: {}
+[0.300598] (-) TimerEvent: {}
+[0.401062] (-) TimerEvent: {}
+[0.501518] (-) TimerEvent: {}
+[0.601932] (-) TimerEvent: {}
+[0.702431] (-) TimerEvent: {}
+[0.803371] (-) TimerEvent: {}
+[0.903779] (-) TimerEvent: {}
+[1.004207] (-) TimerEvent: {}
+[1.104722] (-) TimerEvent: {}
+[1.205277] (-) TimerEvent: {}
+[1.305665] (-) TimerEvent: {}
+[1.406059] (-) TimerEvent: {}
+[1.506441] (-) TimerEvent: {}
+[1.606851] (-) TimerEvent: {}
+[1.707229] (-) TimerEvent: {}
+[1.807602] (-) TimerEvent: {}
+[1.908033] (-) TimerEvent: {}
+[2.008442] (-) TimerEvent: {}
+[2.108867] (-) TimerEvent: {}
+[2.209259] (-) TimerEvent: {}
+[2.309636] (-) TimerEvent: {}
+[2.410044] (-) TimerEvent: {}
+[2.510416] (-) TimerEvent: {}
+[2.610812] (-) TimerEvent: {}
+[2.711223] (-) TimerEvent: {}
+[2.811605] (-) TimerEvent: {}
+[2.912011] (-) TimerEvent: {}
+[3.012386] (-) TimerEvent: {}
+[3.112793] (-) TimerEvent: {}
+[3.213242] (-) TimerEvent: {}
+[3.313645] (-) TimerEvent: {}
+[3.414057] (-) TimerEvent: {}
+[3.514446] (-) TimerEvent: {}
+[3.614858] (-) TimerEvent: {}
+[3.715280] (-) TimerEvent: {}
+[3.815699] (-) TimerEvent: {}
+[3.916149] (-) TimerEvent: {}
+[4.016544] (-) TimerEvent: {}
+[4.116927] (-) TimerEvent: {}
+[4.217326] (-) TimerEvent: {}
+[4.317711] (-) TimerEvent: {}
+[4.418101] (-) TimerEvent: {}
+[4.518481] (-) TimerEvent: {}
+[4.618868] (-) TimerEvent: {}
+[4.719258] (-) TimerEvent: {}
+[4.819643] (-) TimerEvent: {}
+[4.920038] (-) TimerEvent: {}
+[5.020418] (-) TimerEvent: {}
+[5.120782] (-) TimerEvent: {}
+[5.221151] (-) TimerEvent: {}
+[5.321556] (-) TimerEvent: {}
+[5.421943] (-) TimerEvent: {}
+[5.522320] (-) TimerEvent: {}
+[5.622692] (-) TimerEvent: {}
+[5.723092] (-) TimerEvent: {}
+[5.823476] (-) TimerEvent: {}
+[5.923861] (-) TimerEvent: {}
+[6.024228] (-) TimerEvent: {}
+[6.124591] (-) TimerEvent: {}
+[6.224944] (-) TimerEvent: {}
+[6.325297] (-) TimerEvent: {}
+[6.425664] (-) TimerEvent: {}
+[6.526051] (-) TimerEvent: {}
+[6.626434] (-) TimerEvent: {}
+[6.726798] (-) TimerEvent: {}
+[6.827176] (-) TimerEvent: {}
+[6.927541] (-) TimerEvent: {}
+[7.027913] (-) TimerEvent: {}
+[7.128275] (-) TimerEvent: {}
+[7.228666] (-) TimerEvent: {}
+[7.329070] (-) TimerEvent: {}
+[7.429431] (-) TimerEvent: {}
+[7.529806] (-) TimerEvent: {}
+[7.630284] (-) TimerEvent: {}
+[7.730696] (-) TimerEvent: {}
+[7.831101] (-) TimerEvent: {}
+[7.931471] (-) TimerEvent: {}
+[8.031864] (-) TimerEvent: {}
+[8.132263] (-) TimerEvent: {}
+[8.232829] (-) TimerEvent: {}
+[8.333229] (-) TimerEvent: {}
+[8.433612] (-) TimerEvent: {}
+[8.534030] (-) TimerEvent: {}
+[8.634426] (-) TimerEvent: {}
+[8.734794] (-) TimerEvent: {}
+[8.835169] (-) TimerEvent: {}
+[8.935529] (-) TimerEvent: {}
+[9.035903] (-) TimerEvent: {}
+[9.136268] (-) TimerEvent: {}
+[9.236638] (-) TimerEvent: {}
+[9.337024] (-) TimerEvent: {}
+[9.437393] (-) TimerEvent: {}
+[9.537758] (-) TimerEvent: {}
+[9.638139] (-) TimerEvent: {}
+[9.738507] (-) TimerEvent: {}
+[9.838888] (-) TimerEvent: {}
+[9.939256] (-) TimerEvent: {}
+[10.039619] (-) TimerEvent: {}
+[10.140007] (-) TimerEvent: {}
+[10.240375] (-) TimerEvent: {}
+[10.340736] (-) TimerEvent: {}
+[10.441126] (-) TimerEvent: {}
+[10.541493] (-) TimerEvent: {}
+[10.641865] (-) TimerEvent: {}
+[10.742221] (-) TimerEvent: {}
+[10.842584] (-) TimerEvent: {}
+[10.942939] (-) TimerEvent: {}
+[11.043297] (-) TimerEvent: {}
+[11.143669] (-) TimerEvent: {}
+[11.244054] (-) TimerEvent: {}
+[11.344407] (-) TimerEvent: {}
+[11.444766] (-) TimerEvent: {}
+[11.545140] (-) TimerEvent: {}
+[11.645504] (-) TimerEvent: {}
+[11.745878] (-) TimerEvent: {}
+[11.846234] (-) TimerEvent: {}
+[11.946594] (-) TimerEvent: {}
+[12.046949] (-) TimerEvent: {}
+[12.147306] (-) TimerEvent: {}
+[12.247642] (-) TimerEvent: {}
+[12.348037] (-) TimerEvent: {}
+[12.448424] (-) TimerEvent: {}
+[12.548864] (-) TimerEvent: {}
+[12.649317] (-) TimerEvent: {}
+[12.749763] (-) TimerEvent: {}
+[12.850217] (-) TimerEvent: {}
+[12.950659] (-) TimerEvent: {}
+[13.051182] (-) TimerEvent: {}
+[13.151597] (-) TimerEvent: {}
+[13.252512] (-) TimerEvent: {}
+[13.283106] (test-com-package) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable talker-listener\x1b[0m\n'}
+[13.352710] (-) TimerEvent: {}
+[13.453457] (-) TimerEvent: {}
+[13.554303] (-) TimerEvent: {}
+[13.654941] (-) TimerEvent: {}
+[13.756326] (-) TimerEvent: {}
+[13.856796] (-) TimerEvent: {}
+[13.957209] (-) TimerEvent: {}
+[14.024409] (test-com-package) StdoutLine: {'line': b'[100%] Built target talker-listener\n'}
+[14.046221] (test-com-package) CommandEnded: {'returncode': 0}
+[14.047099] (test-com-package) JobProgress: {'identifier': 'test-com-package', 'progress': 'install'}
+[14.057319] (-) TimerEvent: {}
+[14.064036] (test-com-package) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/mini4ev/mini4ev-pro/build/test-com-package'], 'cwd': '/home/mini4ev/mini4ev-pro/build/test-com-package', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'mini4ev', 'SSH_CLIENT': '10.16.21.83 3096 22', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'BROWSER': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/bin/helpers/browser.sh', 'HOME': '/home/mini4ev', 'OLDPWD': '/home/mini4ev', 'TERM_PROGRAM_VERSION': '1.95.3', 'VSCODE_IPC_HOOK_CLI': '/run/user/1002/vscode-ipc-c5c16fae-f2d0-411a-a3d4-99b363f02e18.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/node', 'SSL_CERT_FILE': '/usr/lib/ssl/cert.pem', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'COLORTERM': 'truecolor', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/mini4ev/mini4ev-pro/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'mini4ev', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '830', 'PATH': '/home/mini4ev/.vscode-server/cli/servers/Stable-f1a4fb101478ce6ec82fe9627c43efbf9e98c813/server/bin/remote-cli:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1002', 'SSL_CERT_DIR': '/usr/lib/ssl/certs', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1002/vscode-git-0c66257890.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/mini4ev/mini4ev-pro/install/test-com-package:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/mini4ev/mini4ev-pro/build/test-com-package', 'SSH_CONNECTION': '10.16.21.83 3096 10.16.81.29 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/mini4ev/mini4ev-pro/install/test-com-package:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[14.079355] (test-com-package) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[14.080217] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/lib/test-com-package/dual-nodes\n'}
+[14.080346] (test-com-package) StdoutLine: {'line': b'-- Installing: /home/mini4ev/mini4ev-pro/install/test-com-package/lib/test-com-package/talker-listener\n'}
+[14.090337] (test-com-package) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/mini4ev/mini4ev-pro/install/test-com-package/lib/test-com-package/talker-listener" to ""\n'}
+[14.090713] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/ament_index/resource_index/package_run_dependencies/test-com-package\n'}
+[14.090950] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/ament_index/resource_index/parent_prefix_path/test-com-package\n'}
+[14.091130] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/environment/ament_prefix_path.sh\n'}
+[14.091249] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/environment/ament_prefix_path.dsv\n'}
+[14.091349] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/environment/path.sh\n'}
+[14.091438] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/environment/path.dsv\n'}
+[14.091551] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/local_setup.bash\n'}
+[14.091653] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/local_setup.sh\n'}
+[14.091753] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/local_setup.zsh\n'}
+[14.091866] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/local_setup.dsv\n'}
+[14.094227] (test-com-package) StdoutLine: {'line': b'-- Installing: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/package.dsv\n'}
+[14.094441] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/ament_index/resource_index/packages/test-com-package\n'}
+[14.094532] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/cmake/test-com-packageConfig.cmake\n'}
+[14.094617] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/cmake/test-com-packageConfig-version.cmake\n'}
+[14.094706] (test-com-package) StdoutLine: {'line': b'-- Up-to-date: /home/mini4ev/mini4ev-pro/install/test-com-package/share/test-com-package/package.xml\n'}
+[14.095362] (test-com-package) CommandEnded: {'returncode': 0}
+[14.117182] (test-com-package) JobEnded: {'identifier': 'test-com-package', 'rc': 0}
+[14.118437] (-) EventReactorShutdown: {}
