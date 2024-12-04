@@ -13,6 +13,8 @@ find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Angle.msg"
+  "msg/MotorState.msg"
+  "msg/SteeringMotors.msg"
 )
 
 # uncomment the following section in order to fill in
@@ -31,4 +33,5 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+ament_export_dependencies(rosidl_default_runtime)
 ament_package()
