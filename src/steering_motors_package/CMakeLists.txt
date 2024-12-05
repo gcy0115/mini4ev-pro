@@ -5,15 +5,19 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-target_include_directories(${PROJECT_NAME} PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>
+include_directories(
+  include
 )
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(custom_interfaces REQUIRED)
+
+add_executable(steering-publisher src/steering_publisher.cpp)
+ament_target_dependencies(steering-publisher rclcpp std_msgs custom_interfaces)
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

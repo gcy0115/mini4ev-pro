@@ -90,7 +90,7 @@ void terminate_can(std::string& can_name){
 
 
 // 函数：接收特定 CAN ID 的反馈帧
-bool receiveCANFrame(int sock, int target_id, std::vector<uint8_t>& data) {
+bool receiveCANFrame(int sock, canid_t target_id, std::vector<uint8_t>& data) {
     struct can_frame frame;
 
     while (true) {

@@ -66,7 +66,7 @@ public:
           std::vector<uint8_t> received_data;
           if (receiveCANFrame(sock_, motor.getMasterID(), received_data))
           {
-            MotorFeedback feedback = parseCANFeedback(motor.getMasterID(), received_data);
+            MotorFeedback feedback = parseCANFeedback( received_data);
 
             // 更新电机状态
             motor.setERR(feedback.ERR);
@@ -133,7 +133,7 @@ public:
     bool stop_thread_ = false;
   };
 
-int main(int argc, char *argv[]) {
+int main() {
 
     // const char* can_interface = "can0";  // CAN 接口名称
     std::string can_id = "can0";

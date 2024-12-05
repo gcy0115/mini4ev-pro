@@ -197,7 +197,7 @@ struct MotorFeedback {
     uint8_t T_MOS;    // 8 位驱动器温度
     uint8_t T_Rotor;  // 8 位电机线圈温度
 };
-MotorFeedback parseCANFeedback(int can_id, const std::vector<uint8_t>& data) {
+MotorFeedback parseCANFeedback(const std::vector<uint8_t>& data) {
     if (data.size() < 8) {
         throw std::invalid_argument("CAN 数据长度不足 8 字节");
     }
