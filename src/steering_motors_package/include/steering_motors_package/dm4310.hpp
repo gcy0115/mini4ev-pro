@@ -320,12 +320,12 @@ int setzero_motor(int sock, int motor_id){
 
 }
 
-// 快速检查收发问题
-void sendThread(int sock, dmMotor motor) {
-    while (true) {
-        enable_motor(sock, motor.getID());
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // 控制发送频率
-        disable_motor(sock, motor.getID());
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-    }
-}
+// // 快速检查收发问题
+// void sendThread(int sock, dmMotor motor) {
+//     while (true) {
+//         enable_motor(sock, motor.getID());
+//         std::this_thread::sleep_for(std::chrono::milliseconds(1000)); // 控制发送频率
+//         disable_motor(sock, motor.getID());
+//         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+//     }
+// }

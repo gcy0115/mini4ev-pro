@@ -5,7 +5,7 @@
 
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
-#include "custom_interfaces/msg/angle.hpp"
+#include "custom_interfaces/msg/steering_angle.hpp"
 #include "custom_interfaces/msg/steering_motors.hpp"
 
 using namespace std::chrono_literals;
@@ -22,7 +22,7 @@ class MinimalPublisher : public rclcpp::Node
     调用父类构造函数，初始化节点，指定名称为 "minimal_publisher"。
     初始化 count_ 为 0，用于消息计数。*/
     {
-      publisher_ = this->create_publisher<custom_interfaces::msg::SteeringMotors>("steering_state_message", 10);
+      publisher_ = this->create_publisher<custom_interfaces::msg::SteeringMotors>("steering_test_message", 10);
 
       timer_ = this->create_wall_timer(500ms, std::bind(&MinimalPublisher::timer_callback, this));
       /*
@@ -73,7 +73,7 @@ class MinimalPublisher : public rclcpp::Node
       message.motor4.name = "BL";
 
       
-      RCLCPP_INFO(this->get_logger(), "Publishing steering motors\' states");
+      // RCLCPP_INFO(this->get_logger(), "Publishing steering motors\' states");
       /*
       使用 ROS 日志系统打印发布的消息内容。
       this->get_logger() 返回该节点的日志记录器*/

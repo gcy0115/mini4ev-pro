@@ -1,4 +1,3 @@
-#include <linux/can.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <net/if.h>
@@ -89,24 +88,46 @@ void terminate_can(std::string& can_name){
 }
 
 
-// 函数：接收特定 CAN ID 的反馈帧
-bool receiveCANFrame(int sock, canid_t target_id, std::vector<uint8_t>& data) {
-    struct can_frame frame;
-
-    while (true) {
-        int nbytes = read(sock, &frame, sizeof(struct can_frame));
-
-        if (nbytes < 0) {
-            perror("CAN read error");
-            return false;
-        }
-
-        // 检查 CAN ID 是否匹配
-        if (frame.can_id == target_id) {
-            data.assign(frame.data, frame.data + frame.can_dlc);
-            return true;
-        }
+// 函数：检查反馈帧是否合法
+bool checkCANFrame(const can_frame& frame)
+{
+    // 检查 can_dlc 是否在有效范围内 (0 到 8)
+    if (frame.can_dlc > 8) {
+        return false;  // 如果 can_dlc 超出有效范围，返回 false
     }
+    return true;  // 如果没有问题，返回true
+}
+
+can_frame receiveCANFrame(int sock)
+{
+    can_frame frame;
+    int nbytes = recv(sock, &frame, sizeof(struct can_frame), 0);  // 从 socket 接收数据
+
+    if (nbytes < 0) {
+        std::cerr << "Error receiving CAN frame!" << std::endl;
+        // 错误处理可以根据需求抛出异常或返回一个默认帧
+        throw std::runtime_error("Failed to receive CAN frame");
+    }
+
+    // 你可以根据需要打印或处理 CAN 帧的内容
+    // std::cout << "Received CAN Frame: ID = " << std::hex << frame.can_id
+    //           << " DLC = " << std::dec << static_cast<int>(frame.can_dlc)
+    //           << " Data = ";
+
+    // for (int i = 0; i < frame.can_dlc; i++) {
+    //     std::cout << std::hex << static_cast<int>(frame.data[i]) << " ";
+    // }
+    // std::cout << std::endl;
+
+    return frame;  // 返回接收到的 CAN 帧
+}
+
+std::vector<uint8_t> convertCANDataToVector(const can_frame& frame) {
+    std::vector<uint8_t> data_vector(frame.can_dlc);  // 创建一个大小为 can_dlc 的 vector
+    for (int i = 0; i < frame.can_dlc; ++i) {
+        data_vector[i] = frame.data[i];  // 将数据填充到 vector 中
+    }
+    return data_vector;  // 返回 vector
 }
 
     // std::vector<uint8_t> received_data;
@@ -121,16 +142,16 @@ bool receiveCANFrame(int sock, canid_t target_id, std::vector<uint8_t>& data) {
     // }
 
 // 打印接收到的 CAN 帧数据
-void printReceivedCANFrame(int sock, int target_id) {
-    std::vector<uint8_t> received_data;
-    if (receiveCANFrame(sock, target_id, received_data)) {
-        std::cout << "Received CAN frame with ID " << std::hex << target_id << " and data: ";
-        for (uint8_t byte : received_data) {
-            std::cout << std::hex << static_cast<int>(byte) << " ";
-        }
-        std::cout << std::dec << std::endl;
-    }
-}
+// void printReceivedCANFrame(int sock, int target_id) {
+//     std::vector<uint8_t> received_data;
+//     if (receiveCANFrame(sock, received_data)) {
+//         std::cout << "Received CAN frame with ID " << std::hex << target_id << " and data: ";
+//         for (uint8_t byte : received_data) {
+//             std::cout << std::hex << static_cast<int>(byte) << " ";
+//         }
+//         std::cout << std::dec << std::endl;
+//     }
+// }
 
 
 // demo for sending a CAN frame

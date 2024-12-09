@@ -15,9 +15,13 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(custom_interfaces REQUIRED)
 
-add_executable(steering-publisher src/steering_publisher.cpp)
-ament_target_dependencies(steering-publisher rclcpp std_msgs custom_interfaces)
+add_executable(steering_controller src/steering_controller.cpp)
+ament_target_dependencies(steering_controller rclcpp std_msgs custom_interfaces)
 
+install(TARGETS 
+  # dual-nodes
+  steering_controller
+  DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
