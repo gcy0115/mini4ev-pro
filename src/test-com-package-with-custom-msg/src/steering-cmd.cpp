@@ -35,8 +35,8 @@ class MinimalPublisher : public rclcpp::Node
       
       // 填充motor1的数据，实际内容可以使用电机反馈帧
       message.angle1 = 1.0;
-      message.angle2 = 0.0;
-      message.angle3 = -1.0;
+      message.angle2 = 1.0;
+      message.angle3 = 1.0;
       message.angle4 = 1.0;
 
       

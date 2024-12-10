@@ -206,6 +206,15 @@ class SteeringController : public rclcpp::Node {
     int sock_;
 };
 
+void enable_all_motors(int sock) {
+    const int motor_ids[] = {0x101, 0x102, 0x103, 0x104};
+    for (int motor_id : motor_ids) {
+        if (enable_motor(sock, motor_id) != 0) {
+            std::cerr << "Error enabling motor with ID: " << motor_id << std::endl;
+        }
+    }
+}
+
 int main(int argc, char * argv[]) {
 
     // const char* can_interface = "can0";  // CAN 接口名称
@@ -218,8 +227,8 @@ int main(int argc, char * argv[]) {
         return -1;
   }
 
-  // TODO:使能电机并检查电机状态
-
+  // 使能电机并检查电机状态
+  enable_all_motors(sock);
 
   rclcpp::init(argc, argv);
 

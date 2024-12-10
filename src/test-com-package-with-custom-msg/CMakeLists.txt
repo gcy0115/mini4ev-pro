@@ -23,8 +23,12 @@ find_package(custom_interfaces REQUIRED)
 # 节点可执行文件和节点代码
 add_executable(talker-listener src/pub-sub-function-with-msg.cpp)
 add_executable(steering-cmd-sim src/steering-cmd.cpp)
+add_executable(steering-cmd-user src/steering-with_userinput.cpp)
+
+
 ament_target_dependencies(talker-listener rclcpp std_msgs custom_interfaces)
 ament_target_dependencies(steering-cmd-sim rclcpp std_msgs custom_interfaces)
+ament_target_dependencies(steering-cmd-user rclcpp custom_interfaces)
 
 # target_include_directories(dual-nodes PUBLIC
 #   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -36,6 +40,7 @@ install(TARGETS
   # dual-nodes
   talker-listener
   steering-cmd-sim
+  steering-cmd-user
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
