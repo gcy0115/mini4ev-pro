@@ -17,63 +17,31 @@ class MinimalPublisher : public rclcpp::Node
 {
   public:
     MinimalPublisher()
-    : Node("minimal_publisher"), count_(0)
+    : Node("steering_command_generator"), count_(0)
     /* 节点初始化：
     调用父类构造函数，初始化节点，指定名称为 "minimal_publisher"。
     初始化 count_ 为 0，用于消息计数。*/
     {
-      publisher_ = this->create_publisher<custom_interfaces::msg::SteeringMotors>("steering_test_message", 10);
+      publisher_ = this->create_publisher<custom_interfaces::msg::SteeringAngle>("steering_command", 10);
 
       timer_ = this->create_wall_timer(500ms, std::bind(&MinimalPublisher::timer_callback, this));
-      /*
-      创建一个定时器，每隔 500 毫秒触发一次。
-      std::bind(&MinimalPublisher::timer_callback, this) 将 timer_callback 函数与当前类实例绑定，使定时器调用该函数。*/
+      
     }
 
   private:
     void timer_callback()
     {
-      auto message = custom_interfaces::msg::SteeringMotors();
+      auto message = custom_interfaces::msg::SteeringAngle();
       // 创建一个消息对象，类型为 custom_interfaces::msg::SteeringMotors()，用来存储即将发布的数据。
       
       // 填充motor1的数据，实际内容可以使用电机反馈帧
-      message.motor1.position = 1.0;
-      message.motor1.velocity = 0.5;
-      message.motor1.torque = 0.2;
-      message.motor1.temperature = 40.0;
-      message.motor1.err = 1;
-      message.motor1.canid = 0x101;
-      message.motor1.name = "FL";
-
-      // 填充motor2的数据，实际内容可以使用电机反馈帧
-      message.motor2.position = 2.0;
-      message.motor2.velocity = 1.5;
-      message.motor2.torque = 1.2;
-      message.motor2.temperature = 40.0;
-      message.motor2.err = 1;
-      message.motor2.canid = 0x102;
-      message.motor2.name = "FR";
-
-      // 填充motor3的数据，实际内容可以使用电机反馈帧
-      message.motor3.position = 3.0;
-      message.motor3.velocity = 2.5;
-      message.motor3.torque = 1.6;
-      message.motor3.temperature = 42.0;
-      message.motor3.err = 1;
-      message.motor3.canid = 0x103;
-      message.motor3.name = "BR";
-
-      // 填充motor4的数据，实际内容可以使用电机反馈帧
-      message.motor4.position = 4.0;
-      message.motor4.velocity = 4.5;
-      message.motor4.torque = 1.9;
-      message.motor4.temperature = 43.0;
-      message.motor4.err = 1;
-      message.motor4.canid = 0x104;
-      message.motor4.name = "BL";
+      message.angle1 = 1.0;
+      message.angle2 = 0.0;
+      message.angle3 = -1.0;
+      message.angle4 = 1.0;
 
       
-      // RCLCPP_INFO(this->get_logger(), "Publishing steering motors\' states");
+      RCLCPP_INFO(this->get_logger(), "Publishing steering motors\' states");
       /*
       使用 ROS 日志系统打印发布的消息内容。
       this->get_logger() 返回该节点的日志记录器*/
@@ -81,7 +49,7 @@ class MinimalPublisher : public rclcpp::Node
       // 将创建的消息发布到话题 message。
     }
     rclcpp::TimerBase::SharedPtr timer_;
-    rclcpp::Publisher<custom_interfaces::msg::SteeringMotors>::SharedPtr publisher_;
+    rclcpp::Publisher<custom_interfaces::msg::SteeringAngle>::SharedPtr publisher_;
     size_t count_;
     /*
     rclcpp::TimerBase::SharedPtr timer_：指向定时器的智能指针，用于触发 timer_callback。
@@ -142,7 +110,7 @@ int main(int argc, char * argv[])
   auto subscriber_node = std::make_shared<MinimalSubscriber>();
 
   // 将节点添加到执行器中
-  executor.add_node(publisher_node);
+  // executor.add_node(publisher_node);
   executor.add_node(subscriber_node);
 
   // 启动执行器

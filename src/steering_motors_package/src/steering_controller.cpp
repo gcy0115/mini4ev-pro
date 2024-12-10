@@ -20,29 +20,27 @@ using namespace std::chrono_literals;
 
 const float g_max_speed = 3.0f;  // 单位 rad/s
 
-class SteeringPublisher : public rclcpp::Node
-
-{
-public:
-  SteeringPublisher(int sock)
-      : Node("steering_publisher"), sock_(sock)
-  {
-    // 创建发布者
-    publisher_ = this->create_publisher<custom_interfaces::msg::SteeringMotors>("steering_state_message", 10);
-    RCLCPP_INFO(this->get_logger(), "Creat a publisher");
-
-    // 启动接收线程
-    receive_thread_ = std::thread(&SteeringPublisher::receiveFeedback, this);
-  }
-
-  ~SteeringPublisher()
-  {
-    stop_thread_ = true; // 停止接收线程
-    if (receive_thread_.joinable())
+class SteeringPublisher : public rclcpp::Node{
+  public:
+    SteeringPublisher(int sock)
+        : Node("steering_publisher"), sock_(sock)
     {
-      receive_thread_.join();
+      // 创建发布者
+      publisher_ = this->create_publisher<custom_interfaces::msg::SteeringMotors>("steering_state_message", 10);
+      RCLCPP_INFO(this->get_logger(), "Creat a publisher");
+
+      // 启动接收线程
+      receive_thread_ = std::thread(&SteeringPublisher::receiveFeedback, this);
     }
-  }
+
+    ~SteeringPublisher()
+    {
+      stop_thread_ = true; // 停止接收线程
+      if (receive_thread_.joinable())
+      {
+        receive_thread_.join();
+      }
+    }
 
 
   private:
@@ -59,16 +57,16 @@ public:
 
     void receiveFeedback()
     {
-      RCLCPP_INFO(this->get_logger(), "Enter receive thread");
+      // RCLCPP_INFO(this->get_logger(), "Enter receive thread");
       while (!stop_thread_)
       {
         custom_interfaces::msg::SteeringMotors message;
-        RCLCPP_INFO(this->get_logger(), "Generate a steering motor message");
+        // RCLCPP_INFO(this->get_logger(), "Generate a steering motor message");
         for (auto &motor : motors_)
         {
           can_frame received_data = receiveCANFrame(sock_);
           if (checkCANFrame(received_data)){
-            RCLCPP_INFO(this->get_logger(), "Receving a possibly can frame!");
+            
             MotorFeedback feedback = parseCANFeedback(convertCANDataToVector(received_data));
 
             // 更新电机状态
@@ -82,8 +80,9 @@ public:
             motor.setMasterID(received_data.can_id);
 
             // 填充消息
-            if (motor.getMasterID() == 0x101)
+            if (motor.getMasterID() == 0x021)
             {
+              RCLCPP_INFO(this->get_logger(), "Receving from 0x021");
               message.motor1.position = motor.getPOS();
               message.motor1.velocity = motor.getVEL();
               message.motor1.torque = motor.getT();
@@ -92,8 +91,9 @@ public:
               message.motor1.canid = motor.getMasterID();
               message.motor1.name = "FL";
             }
-            else if (motor.getMasterID() == 0x102)
+            else if (motor.getMasterID() == 0x022)
             {
+              RCLCPP_INFO(this->get_logger(), "Receving from 0x022");
               message.motor2.position = motor.getPOS();
               message.motor2.velocity = motor.getVEL();
               message.motor2.torque = motor.getT();
@@ -102,8 +102,9 @@ public:
               message.motor2.canid = motor.getMasterID();
               message.motor2.name = "FR";
             }
-            else if (motor.getMasterID() == 0x103)
+            else if (motor.getMasterID() == 0x023)
             {
+              RCLCPP_INFO(this->get_logger(), "Receving from 0x023");
               message.motor3.position = motor.getPOS();
               message.motor3.velocity = motor.getVEL();
               message.motor3.torque = motor.getT();
@@ -112,8 +113,9 @@ public:
               message.motor3.canid = motor.getMasterID();
               message.motor3.name = "BR";
             }
-            else if (motor.getMasterID() == 0x104)
+            else if (motor.getMasterID() == 0x024)
             {
+              RCLCPP_INFO(this->get_logger(), "Receving from 0x02");
               message.motor4.position = motor.getPOS();
               message.motor4.velocity = motor.getVEL();
               message.motor4.torque = motor.getT();
@@ -139,10 +141,10 @@ public:
     // 接收线程
     std::thread receive_thread_;
     bool stop_thread_ = false;
-  };
+};
 
 class SteeringController : public rclcpp::Node {
-public:
+  public:
     SteeringController(int sock) : Node("steering_controller"), sock_(sock) {
         // 订阅 "steering_command" 主题
         subscription_ = this->create_subscription<custom_interfaces::msg::SteeringAngle>(
@@ -152,7 +154,7 @@ public:
         );
     }
 
-private:
+  private:
     void commandCallback(const custom_interfaces::msg::SteeringAngle::SharedPtr msg) {
         // 处理每个电机的目标角度
         if (PosControlFrame(sock_, 0x101, static_cast<float>(msg->angle1), g_max_speed) != 0) {
@@ -189,6 +191,9 @@ int main(int argc, char * argv[]) {
   if (sock < 0) {
         return -1;
   }
+
+  // TODO:使能电机并检查电机状态
+
 
   rclcpp::init(argc, argv);
 
