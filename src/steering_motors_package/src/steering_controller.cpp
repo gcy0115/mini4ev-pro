@@ -57,84 +57,110 @@ class SteeringPublisher : public rclcpp::Node{
 
     void receiveFeedback()
     {
-      // RCLCPP_INFO(this->get_logger(), "Enter receive thread");
+      std::map<int, bool> motor_data_ready = {
+          {0x021, false}, // 前左电机
+          {0x022, false}, // 前右电机
+          {0x023, false}, // 后右电机
+          {0x024, false}  // 后左电机
+      };
+
+      custom_interfaces::msg::SteeringMotors message;
+
       while (!stop_thread_)
       {
-        custom_interfaces::msg::SteeringMotors message;
-        // RCLCPP_INFO(this->get_logger(), "Generate a steering motor message");
-        for (auto &motor : motors_)
-        {
-          can_frame received_data = receiveCANFrame(sock_);
-          if (checkCANFrame(received_data)){
-            
-            MotorFeedback feedback = parseCANFeedback(convertCANDataToVector(received_data));
+          for (auto &motor : motors_)
+          {
+              can_frame received_data = receiveCANFrame(sock_);
 
-            // 更新电机状态
-            // motor.setID(feedback.motorID);
-            motor.setERR(feedback.ERR);
-            motor.setPOS(feedback.POS);
-            motor.setVEL(feedback.VEL);
-            motor.setT(feedback.T);
-            motor.setTMOS(feedback.T_MOS);
-            motor.setTRotor(feedback.T_Rotor);
-            motor.setMasterID(received_data.can_id);
+              if (checkCANFrame(received_data))
+              {
+                  MotorFeedback feedback = parseCANFeedback(convertCANDataToVector(received_data));
 
-            // 填充消息
-            if (motor.getMasterID() == 0x021)
-            {
-              RCLCPP_INFO(this->get_logger(), "Receving from 0x021");
-              message.motor1.position = motor.getPOS();
-              message.motor1.velocity = motor.getVEL();
-              message.motor1.torque = motor.getT();
-              message.motor1.temperature = motor.getTRotor();
-              message.motor1.err = motor.getERR();
-              message.motor1.canid = motor.getMasterID();
-              message.motor1.name = "FL";
-            }
-            else if (motor.getMasterID() == 0x022)
-            {
-              RCLCPP_INFO(this->get_logger(), "Receving from 0x022");
-              message.motor2.position = motor.getPOS();
-              message.motor2.velocity = motor.getVEL();
-              message.motor2.torque = motor.getT();
-              message.motor2.temperature = motor.getTRotor();
-              message.motor2.err = motor.getERR();
-              message.motor2.canid = motor.getMasterID();
-              message.motor2.name = "FR";
-            }
-            else if (motor.getMasterID() == 0x023)
-            {
-              RCLCPP_INFO(this->get_logger(), "Receving from 0x023");
-              message.motor3.position = motor.getPOS();
-              message.motor3.velocity = motor.getVEL();
-              message.motor3.torque = motor.getT();
-              message.motor3.temperature = motor.getTRotor();
-              message.motor3.err = motor.getERR();
-              message.motor3.canid = motor.getMasterID();
-              message.motor3.name = "BR";
-            }
-            else if (motor.getMasterID() == 0x024)
-            {
-              RCLCPP_INFO(this->get_logger(), "Receving from 0x02");
-              message.motor4.position = motor.getPOS();
-              message.motor4.velocity = motor.getVEL();
-              message.motor4.torque = motor.getT();
-              message.motor4.temperature = motor.getTRotor();
-              message.motor4.err = motor.getERR();
-              message.motor4.canid = motor.getMasterID();
-              message.motor4.name = "BL";
-            }
+                  // 更新电机状态
+                  motor.setERR(feedback.ERR);
+                  motor.setPOS(feedback.POS);
+                  motor.setVEL(feedback.VEL);
+                  motor.setT(feedback.T);
+                  motor.setTMOS(feedback.T_MOS);
+                  motor.setTRotor(feedback.T_Rotor);
+                  motor.setMasterID(received_data.can_id);
+
+                  // 填充消息
+                  if (motor.getMasterID() == 0x021)
+                  {
+                      RCLCPP_INFO(this->get_logger(), "Receiving from 0x021");
+                      message.motor1.position = motor.getPOS();
+                      message.motor1.velocity = motor.getVEL();
+                      message.motor1.torque = motor.getT();
+                      message.motor1.temperature = motor.getTRotor();
+                      message.motor1.err = motor.getERR();
+                      message.motor1.canid = motor.getMasterID();
+                      message.motor1.name = "FL";
+                      motor_data_ready[0x021] = true;
+                  }
+                  else if (motor.getMasterID() == 0x022)
+                  {
+                      RCLCPP_INFO(this->get_logger(), "Receiving from 0x022");
+                      message.motor2.position = motor.getPOS();
+                      message.motor2.velocity = motor.getVEL();
+                      message.motor2.torque = motor.getT();
+                      message.motor2.temperature = motor.getTRotor();
+                      message.motor2.err = motor.getERR();
+                      message.motor2.canid = motor.getMasterID();
+                      message.motor2.name = "FR";
+                      motor_data_ready[0x022] = true;
+                  }
+                  else if (motor.getMasterID() == 0x023)
+                  {
+                      RCLCPP_INFO(this->get_logger(), "Receiving from 0x023");
+                      message.motor3.position = motor.getPOS();
+                      message.motor3.velocity = motor.getVEL();
+                      message.motor3.torque = motor.getT();
+                      message.motor3.temperature = motor.getTRotor();
+                      message.motor3.err = motor.getERR();
+                      message.motor3.canid = motor.getMasterID();
+                      message.motor3.name = "BR";
+                      motor_data_ready[0x023] = true;
+                  }
+                  else if (motor.getMasterID() == 0x024)
+                  {
+                      RCLCPP_INFO(this->get_logger(), "Receiving from 0x024");
+                      message.motor4.position = motor.getPOS();
+                      message.motor4.velocity = motor.getVEL();
+                      message.motor4.torque = motor.getT();
+                      message.motor4.temperature = motor.getTRotor();
+                      message.motor4.err = motor.getERR();
+                      message.motor4.canid = motor.getMasterID();
+                      message.motor4.name = "BL";
+                      motor_data_ready[0x024] = true;
+                  }
+              }
+              else
+              {
+                  RCLCPP_INFO(this->get_logger(), "No CAN frame received!");
+              }
           }
-          else {
-            RCLCPP_INFO(this->get_logger(), "NO can frame received!");
-          }
-        }
 
-        // 发布消息
-        RCLCPP_INFO(this->get_logger(), "Publishing steering motors' states");
-        publisher_->publish(message);
+          // 检查是否所有电机数据都已准备好
+          bool all_data_ready = std::all_of(
+              motor_data_ready.begin(),
+              motor_data_ready.end(),
+              [](const std::pair<int, bool> &entry) { return entry.second; });
+
+          if (all_data_ready)
+          {
+              RCLCPP_INFO(this->get_logger(), "Publishing steering motors' states");
+              publisher_->publish(message);
+
+              // 重置标志位
+              for (auto &entry : motor_data_ready)
+              {
+                  entry.second = false;
+              }
+          }
       }
     }
+
 
     rclcpp::Publisher<custom_interfaces::msg::SteeringMotors>::SharedPtr publisher_;
 
