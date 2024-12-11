@@ -49,6 +49,14 @@ sudo apt install raspberrypi-kernel-headers
 ```bash
 sudo apt install linux-headers-$(uname -r)
 ```
+#### 禁用cdc_ACM驱动
+在 Linux 系统中，`cdc_acm` 是一个内核模块，用于支持 USB 调制解调器和其他基于 ACM（通信设备类抽象控制模型）接口的设备。
+当使用：
+```bash
+sudo rmmod cdc_acm
+```
+如果设备在 cdc_acm 被卸载后重新插入，它可能会再次加载模块。这会导致串口板上设备相关节点编译失败。因此我们需要永久禁用。
+
 
 #### 规则设置
 
