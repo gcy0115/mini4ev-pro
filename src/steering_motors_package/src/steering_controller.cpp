@@ -18,7 +18,7 @@
 
 using namespace std::chrono_literals;
 
-const float g_max_speed = 3.0f;  // 单位 rad/s
+const float g_max_speed = 40.0f;  // 单位 rad/s
 
 class SteeringPublisher : public rclcpp::Node{
   public:
