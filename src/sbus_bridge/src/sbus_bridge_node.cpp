@@ -127,6 +127,8 @@ int main( int argc, char **argv )
 		// Only publish if we have a new sample
 		if( lastPublishedTimestamp != sbus.header.stamp ) {
 //			RCLCPP_INFO(nh->get_logger(), "PUB");
+			// NEW CODE: Print message details before publishing
+    		RCLCPP_INFO(nh->get_logger(), "Publishing new SBUS message: Frame Lost: %d, Failsafe: %d", sbus.frame_lost, sbus.failsafe);
 			pub->publish( sbus );
 			lastPublishedTimestamp = sbus.header.stamp;
 		}
