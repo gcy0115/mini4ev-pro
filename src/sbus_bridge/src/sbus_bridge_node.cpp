@@ -54,7 +54,7 @@ int main( int argc, char **argv )
 	double enableChannelProportionalMax;
 
 	port = nh->declare_parameter<std::string>("port", "/dev/sbus");
-	refresh_rate_hr = nh->declare_parameter<int>("refresh_rate_hz", 5);
+	refresh_rate_hr = nh->declare_parameter<int>("refresh_rate_hz", 50);
 	rxMinValue = nh->declare_parameter<int>("rxMinValue", 172);
 	rxMaxValue = nh->declare_parameter<int>("rxMaxValue", 1811);
 	outMinValue = nh->declare_parameter<int>("outMinValue", 0);
@@ -128,7 +128,10 @@ int main( int argc, char **argv )
 		if( lastPublishedTimestamp != sbus.header.stamp ) {
 //			RCLCPP_INFO(nh->get_logger(), "PUB");
 			// NEW CODE: Print message details before publishing
-    		RCLCPP_INFO(nh->get_logger(), "Publishing new SBUS message: Frame Lost: %d, Failsafe: %d", sbus.frame_lost, sbus.failsafe);
+    		RCLCPP_INFO(nh->get_logger(), "Publishing new SBUS message: Frame Lost: %d, Failsafe: %d, Raw Channels: %d",
+			sbus.frame_lost, 
+			sbus.failsafe, 
+			sbus.raw_channels[1]);
 			pub->publish( sbus );
 			lastPublishedTimestamp = sbus.header.stamp;
 		}
