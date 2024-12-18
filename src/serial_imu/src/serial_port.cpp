@@ -14,7 +14,7 @@ extern "C"{
 #include "ch_serial.h"
 
 #define IMU_SERIAL  ("/dev/imu")
-#define BAUD        (B921600)
+#define BAUD        (B115200)
 #define GRA_ACC     (9.8)
 #define DEG_TO_RAD  (0.01745329)
 #define BUF_SIZE    (1024)
@@ -65,6 +65,7 @@ class IMUPublisher : public rclcpp::Node
 
 						imu_data.header.stamp = rclcpp::Clock().now();
 						imu_data.header.frame_id = "imu_link";
+						RCLCPP_INFO(this->get_logger(), "Publishing IMU states ");
 						imu_pub->publish(imu_data);
 					}
 				}

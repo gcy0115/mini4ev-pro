@@ -59,5 +59,9 @@ sudo rmmod cdc_acm
 
 
 #### 规则设置
+### 低延时设置：
+`sudo apt install expect`  
+`sudo apt-get install -y setserial`
+
 
 详细参考rules/rules.md

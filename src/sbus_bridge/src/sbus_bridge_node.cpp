@@ -55,8 +55,8 @@ int main( int argc, char **argv )
 
 	port = nh->declare_parameter<std::string>("port", "/dev/sbus");
 	refresh_rate_hr = nh->declare_parameter<int>("refresh_rate_hz", 50);
-	rxMinValue = nh->declare_parameter<int>("rxMinValue", 172);
-	rxMaxValue = nh->declare_parameter<int>("rxMaxValue", 1811);
+	rxMinValue = nh->declare_parameter<int>("rxMinValue", 192);
+	rxMaxValue = nh->declare_parameter<int>("rxMaxValue", 1792);
 	outMinValue = nh->declare_parameter<int>("outMinValue", 0);
 	outMaxValue = nh->declare_parameter<int>("outMaxValue", 255);
 	silentOnFailsafe = nh->declare_parameter<bool>("silentOnFailsafe", false);
@@ -128,10 +128,13 @@ int main( int argc, char **argv )
 		if( lastPublishedTimestamp != sbus.header.stamp ) {
 //			RCLCPP_INFO(nh->get_logger(), "PUB");
 			// NEW CODE: Print message details before publishing
-    		RCLCPP_INFO(nh->get_logger(), "Publishing new SBUS message: Frame Lost: %d, Failsafe: %d, Raw Channels: %d",
+    		RCLCPP_INFO(nh->get_logger(), "Publishing new SBUS message: Frame Lost: %d, Failsafe: %d, Raw Channels(0)(1): %d, %d, Mapped Channel(0)(1): %d, %d",
 			sbus.frame_lost, 
 			sbus.failsafe, 
-			sbus.raw_channels[1]);
+			sbus.raw_channels[0],
+			sbus.raw_channels[1],
+			sbus.mapped_channels[0],
+			sbus.mapped_channels[1]);
 			pub->publish( sbus );
 			lastPublishedTimestamp = sbus.header.stamp;
 		}

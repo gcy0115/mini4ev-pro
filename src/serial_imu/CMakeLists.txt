@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(ch040_imu_cpp)
+project(serial_imu)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -39,10 +39,16 @@ endif()
 add_executable(imu_publisher src/serial_port.cpp src/ch_serial.c)
 ament_target_dependencies(imu_publisher rclcpp std_msgs sensor_msgs)
 
-add_executable(listener src/sub_spec.cpp)
-ament_target_dependencies(listener rclcpp std_msgs sensor_msgs)
+add_executable(imu_listener src/sub_spec.cpp)
+ament_target_dependencies(imu_listener rclcpp std_msgs sensor_msgs)
 
-install(TARGETS imu_publisher listener  DESTINATION lib/${PROJECT_NAME})
-install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
+install(TARGETS 
+      imu_publisher 
+      imu_listener  
+      DESTINATION lib/${PROJECT_NAME})
+
+      install(DIRECTORY 
+      launch 
+      DESTINATION share/${PROJECT_NAME})
 
 ament_package()

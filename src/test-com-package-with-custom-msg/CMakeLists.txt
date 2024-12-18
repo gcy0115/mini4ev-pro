@@ -11,6 +11,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(custom_interfaces REQUIRED)
+find_package(sbus_interface REQUIRED)
 # <depend>rclcpp</depend>
 # <depend>std_msgs</depend>
 # <depend>custom_interfaces</depend>
@@ -23,12 +24,14 @@ find_package(custom_interfaces REQUIRED)
 # 节点可执行文件和节点代码
 add_executable(talker-listener src/pub-sub-function-with-msg.cpp)
 add_executable(steering-cmd-sim src/steering-cmd.cpp)
-add_executable(steering-cmd-user src/steering-with_userinput.cpp)
+add_executable(steering-cmd-user src/steering-with-userinput.cpp)
+add_executable(steering-cmd-sbus src/steering-with-sbus.cpp)
 
 
 ament_target_dependencies(talker-listener rclcpp std_msgs custom_interfaces)
 ament_target_dependencies(steering-cmd-sim rclcpp std_msgs custom_interfaces)
 ament_target_dependencies(steering-cmd-user rclcpp custom_interfaces)
+ament_target_dependencies(steering-cmd-sbus rclcpp custom_interfaces sbus_interface)
 
 # target_include_directories(dual-nodes PUBLIC
 #   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -41,6 +44,7 @@ install(TARGETS
   talker-listener
   steering-cmd-sim
   steering-cmd-user
+  steering-cmd-sbus
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)

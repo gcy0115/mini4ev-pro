@@ -5,13 +5,13 @@ import launch_ros.actions
 def generate_launch_description():
     return LaunchDescription([
         launch_ros.actions.Node(
-            package='ch040_imu_cpp',
+            package='serial_imu',
             executable='imu_publisher',
             output='screen'
             ),
         launch_ros.actions.Node(
-            package='ch040_imu_cpp',
-            executable='listener',
+            package='serial_imu',
+            executable='imu_listener',
             output='screen'
             ),
         ])

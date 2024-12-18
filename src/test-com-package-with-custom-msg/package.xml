@@ -13,6 +13,7 @@
   <depend>rclcpp</depend>
   <depend>std_msgs</depend>
   <depend>custom_interfaces</depend>
+  <depend>sbus_interface</depend>
   <!-- #include "rclcpp/rclcpp.hpp" -->
   <!-- #include "std_msgs/msg/string.hpp" -->
   <!-- #include "custom_interfaces/msg/angle.hpp" -->
