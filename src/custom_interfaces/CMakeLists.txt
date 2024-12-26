@@ -9,12 +9,17 @@ endif()
 find_package(ament_cmake REQUIRED)
 
 # find_package(geometry_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/BasicCommand.msg"
+  "msg/DrivingCommand.msg"
+  "msg/DrivingMotors.msg"
   "msg/SteeringAngle.msg"
   "msg/MotorState.msg"
   "msg/SteeringMotors.msg"
+  DEPENDENCIES std_msgs
 )
 
 # uncomment the following section in order to fill in

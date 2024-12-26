@@ -94,7 +94,7 @@ class SteeringPublisher : public rclcpp::Node{
                       message.motor1.torque = motor.getT();
                       message.motor1.temperature = motor.getTRotor();
                       message.motor1.err = motor.getERR();
-                      message.motor1.canid = motor.getMasterID();
+                      message.motor1.id = motor.getMasterID();
                       message.motor1.name = "FL";
                       motor_data_ready[0x021] = true;
                   }
@@ -106,7 +106,7 @@ class SteeringPublisher : public rclcpp::Node{
                       message.motor2.torque = motor.getT();
                       message.motor2.temperature = motor.getTRotor();
                       message.motor2.err = motor.getERR();
-                      message.motor2.canid = motor.getMasterID();
+                      message.motor2.id = motor.getMasterID();
                       message.motor2.name = "FR";
                       motor_data_ready[0x022] = true;
                   }
@@ -118,7 +118,7 @@ class SteeringPublisher : public rclcpp::Node{
                       message.motor3.torque = motor.getT();
                       message.motor3.temperature = motor.getTRotor();
                       message.motor3.err = motor.getERR();
-                      message.motor3.canid = motor.getMasterID();
+                      message.motor3.id = motor.getMasterID();
                       message.motor3.name = "BR";
                       motor_data_ready[0x023] = true;
                   }
@@ -130,7 +130,7 @@ class SteeringPublisher : public rclcpp::Node{
                       message.motor4.torque = motor.getT();
                       message.motor4.temperature = motor.getTRotor();
                       message.motor4.err = motor.getERR();
-                      message.motor4.canid = motor.getMasterID();
+                      message.motor4.id = motor.getMasterID();
                       message.motor4.name = "BL";
                       motor_data_ready[0x024] = true;
                   }

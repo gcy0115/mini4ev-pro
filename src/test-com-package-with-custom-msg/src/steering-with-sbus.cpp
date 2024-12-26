@@ -11,7 +11,7 @@ class MotorCommandSubscriber : public rclcpp::Node
 {
 public:
     MotorCommandSubscriber()
-        : Node("motor_command_subscriber"), rate_(100)
+        : Node("motor_command_subscriber"), rate_(50)
     {
         // 创建订阅者，订阅 /sbus 话题
         sbus_subscription_ = this->create_subscription<sbus_interface::msg::Sbus>(
@@ -38,6 +38,14 @@ private:
         steering_msg.angle2 = motor_angle;
         steering_msg.angle3 = motor_angle;
         steering_msg.angle4 = motor_angle;
+
+        if (msg->frame_lost || msg->failsafe){
+            steering_msg.angle1 = 0;
+            steering_msg.angle2 = 0;
+            steering_msg.angle3 = 0;
+            steering_msg.angle4 = 0;
+        }
+
 
         // 发布转向命令
         motor_command_publisher_->publish(steering_msg);

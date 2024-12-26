@@ -1,0 +1,6 @@
+max_speed: 10.0               # 最大车速（单位：m/s）
+max_torque: 0.2               # 最大力矩（单位：Nm）未减速前
+left_steering_limit: -1.1    # 左转向极限（单位：rad）
+right_steering_limit: 1.0    # 右转向极限（单位：rad）
+drive_mode: 1                 # 驱动模式：1 - 全轮驱动，2 - 后轮驱动
+steering_mode: 2              # 转向模式：1 - 全轮转向，2 - 前轮转向，3 - 后轮转向
