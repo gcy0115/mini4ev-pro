@@ -3,4 +3,5 @@
 ```bash
     sudo cp 99-ch344q.rules /etc/udev/rules.d/99-ch344q.rules 
     sudo cp 99-teensy.rules /etc/udev/rules.d/99-teensy.rules 
+    sudo cp 99-imu.rules /etc/udev/rules.d/99-imu.rules 
 ``` 
