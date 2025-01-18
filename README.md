@@ -110,3 +110,9 @@ vermagic:       6.8.0-1016-raspi SMP preempt mod_unload modversions aarch64
 
 
 详细参考rules/rules.md，这用于给usb_ch343设备重新命名，并固定名称。此步骤不完成，工程将无法编译。
+
+## 启动的launch文件与命令：
+### imu
+```bash
+ros2 launch microstrain_inertial_driver microstrain_launch.py
+```
